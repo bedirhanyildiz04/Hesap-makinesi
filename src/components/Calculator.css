@@ -1,0 +1,87 @@
+body {
+  background-image: url('https://img.freepik.com/free-vector/abstract-background-with-artificial-intelligence-elements_23-2148361988.jpg?w=996&t=st=1707511406~exp=1707512006~hmac=bd2e276106be91b9fe8660f68bdcbe9d66b3e9563214b1908ab6b1b01f41117e');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.calculator {
+  width: 320px;
+  height: 425px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #1e1e1e; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  opacity: 0; 
+}
+
+
+.calculator input[type="text"] {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 24px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.calculator .keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+}
+
+.calculator .keypad button {
+  padding: 20px;
+  font-size: 18px;
+  border: none;
+  background-color: #2f2f2f;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.calculator .keypad button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #00ffec;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.calculator .keypad button:hover::before {
+  animation: neon 1.5s infinite alternate;
+}
+
+@keyframes neon {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.calculator .keypad button.operator {
+  background-color: #ff9900;
+  color: #fff;
+}
+
+.calculator .keypad button.equal {
+  background-color: rgb(28, 215, 28);
+}
